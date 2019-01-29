@@ -1,6 +1,7 @@
 # Github followers list
 
 [Пример работы](http://react-github-follower-list.surge.sh)
+7a8d7c2f49358a080904139ac4d9a43caae40763
 
 Ваша задача написать используя `redux-saga` написать небольшое приложение,
 получающее информацию о пользователе и его подписчиков.

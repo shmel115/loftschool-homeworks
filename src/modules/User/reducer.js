@@ -4,7 +4,7 @@ import { fetchRequest, fetchSuccess, fetchFailure } from './actions';
 
 // Обратите внимание на тесты reducer.test.js
 // Они помогут вам написать редьюсер
-const isAuthorize = handleActions(
+const isLoading = handleActions(
   {
     [fetchRequest]: () => true,
     [fetchSuccess]: (state, action) => false,
@@ -12,26 +12,17 @@ const isAuthorize = handleActions(
   },
   false
 );
-const result = handleActions(
+const data = handleActions(
   {
     [fetchSuccess]: (state, action) => action.payload
   },
   []
 );
 
-const error = handleActions(
-  {
-    [fetchFailure]: (state, action) => action.error
-  },
-  null
-);
-
 export default combineReducers({
-  result,
-  error,
-  isAuthorize
+  data,
+  isLoading
 });
 
-export const getUserResult = state => state.user.result;
-export const getUserError = state => state.user.error;
-export const getUserIsFetch = state => state.user.isAuthorize;
+export const getUserResult = state => state.user.data;
+export const getUserIsFetch = state => state.user.isLoading;

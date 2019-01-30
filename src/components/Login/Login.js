@@ -32,7 +32,7 @@ class Login extends PureComponent {
   render() {
     const { isAuthorized } = this.props;
     const { key } = this.state;
-    //if (isAuthorized) return <Redirect to="/search" />;
+    if (isAuthorized) return <Redirect to="/search" />;
 
     return (
       <div className={styles.root}>
